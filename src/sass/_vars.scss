@@ -1,0 +1,20 @@
+:root {
+  /* color */
+  --primary-text-color: #131313;
+  --secondary-text-color: #fcfcfc;
+
+  --accent-color: #f8d24e;
+  --primary-bg-color: #84a178;
+  --secondary-bg-color: #f5f5f5;
+
+  --products-color1: #aec6a5;
+  --products-color2: #efd478;
+  --products-color3: #d6936d;
+  /* font */
+  --main-font: "Montserrat", sans-serif;
+  --secondary-font: "Seymour One", sans-serif;
+
+  /* animation */
+  --cubik--: cubic-bezier(0.4, 0, 0.2, 1);
+  --timing--: 250ms;
+}

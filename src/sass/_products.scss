@@ -1,0 +1,111 @@
+.products {
+  background-image: url(../images/background-sm@1x.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 60px 20px;
+
+  @media screen and (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url(../images/background-sm@2x.png);
+  }
+
+  &__uppertitle {
+    font-family: var(--main-font);
+    color: var(--primary-text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    color: var(--primary-text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 148px;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 38px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    border-radius: 24px;
+    max-width: 280px;
+    padding: 0 40px;
+    padding-top: 123px;
+
+    &--green {
+      background-color: var(--products-color1);
+    }
+
+    &--yellow {
+      background-color: var(--products-color2);
+    }
+
+    &--coffee {
+      background-color: var(--products-color3);
+    }
+  }
+
+  &__pic {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+  }
+
+  &__headline {
+    font-family: var(--main-font);
+    color: var(--primary-text-color);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  &__item::before {
+    content: '';
+    background-image: url(../images/icecream1-sm@1x.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__text {
+    font-family: var(--main-font);
+    color: var(--primary-text-color);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 176%;
+    text-align: center;
+    letter-spacing: 0.04em;
+    margin-bottom: 90px;
+  }
+}
