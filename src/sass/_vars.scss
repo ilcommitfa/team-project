@@ -13,8 +13,8 @@
   /* font */
   --main-font: 'Montserrat', sans-serif;
   --secondary-font: 'Seymour One', sans-serif;
+  --additional-font: 'Roboto', sans-serif;
 
   /* animation */
-  --cubik--: cubic-bezier(0.4, 0, 0.2, 1);
-  --timing--: 250ms;
+  --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
