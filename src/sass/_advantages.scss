@@ -1,0 +1,33 @@
+.advantages {
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    &-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.advantages-container {
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+.advantages-item{
+
+}
+
+.advantages-list {
+
+}
+
+.advantages-item::before {
+    content: "";
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-image: url(../images/advantaged/cow.png);
+    background-size: contain;
+}
