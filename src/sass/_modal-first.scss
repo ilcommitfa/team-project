@@ -1,0 +1,157 @@
+.franchise-title {
+    font-family: 'Seymour One';
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    padding: 28px 30px 20px;
+    
+    @media screen and (min-width: 768px) {
+        font-size: 20px;
+        line-height: 1.4;
+        padding: 32px 123px 24px;
+    }
+}
+
+.franchise-text {
+    font-size: 14px;
+    line-height: 1.42;
+    padding: 0 30px 24px;
+
+    @media screen and (min-width: 768px) {
+        font-size: 16px;
+        line-height: 1.37;
+        padding: 0 58px 32px;
+    }
+}
+
+.franchise-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    transition: opacity var(--animation);
+
+    @media screen and (max-width: 767px) {
+        padding: 93px 15px;
+        overflow-y: scroll;
+    }
+}
+
+.franchise-backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.franchise-modal {
+    background-color: var(--secondary-text-color);
+    width: 280px;
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+
+    @media screen and (min-width: 0px) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        max-width: 280px;
+        transform: translate(-50%, -50%) scale(1);
+        transition: transform var(--animation);
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 100%;
+        max-width: 568px;
+    }
+}
+
+.franchise-modal-submit {
+    display: block;
+    width: 114px;
+    height: 42px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.25;
+    background-color: var(--accent-color);
+    border-color: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 24px auto;
+    transition: background-color var(--animation);
+
+    &:hover {
+        background-color: #0A8817; 
+    }
+    &:focus {
+        background-color: #0A8817;
+        color: #FCFCFC;
+    }
+
+    @media screen and (min-width: 768px) {
+        font-size: 14px;
+        line-height: 1.21;
+        width: 121px;
+        margin: 32px auto;
+        padding: 0;
+    }
+}
+
+.franchise-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: var(--secondary-text-color);
+    cursor: pointer;
+    transition: fill var(--animation);
+
+    @media screen and (max-width: 479px) {
+        top: 8px;
+        right: 8px;
+    }
+}
+
+.franchise-input {
+    height: 42px;
+    width: 100%;
+    background: rgba(248, 210, 78, 0.1);
+    border: 1px solid var(--primary-bg-color);
+    border-radius: 10px;
+    outline: none;
+    padding: 0 0 0 16px;
+    transition: fill var(--animation), border-color var(--animation);
+    margin-bottom: 16px;
+
+    @media screen and (max-width: 767px) {
+        margin-bottom: 12px;
+        padding: 0 0 0 12px;
+        height: 32px;
+    }
+}
+
+.franchise-input::placeholder {
+    font-size: 14px;
+    line-height: 1.42;
+    color: var(--primary-text-color);
+}
+
+.franchise-input.textarea {
+    height: 84px;
+    padding-top: 11px;
+    resize: none;
+    margin-bottom: 0;
+}
+
+.franchise-modal-container {
+    padding-left: 100px;
+    padding-right: 100px;
+
+    @media screen and (max-width: 767px) {
+        padding: 0 28px;
+    }
+}
