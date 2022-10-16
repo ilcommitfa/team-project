@@ -184,7 +184,16 @@
     cursor: pointer;
 
     &:hover {
-      background-image: url(../images/icons.svg#arrow-hover);
-    }
+    width: 50px;
+  }
+  }
+}
+
+.btn__svg {
+  width: 40px;
+  height: 15px;
+
+  &:hover {
+    width: 50px;
   }
 }
