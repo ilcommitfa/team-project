@@ -84,14 +84,19 @@
   }
 }
 .socials__link {
-  &:hover .socials__icon,
+  &:hover .socials__icon {
+    fill: var(--secondary-text-color);
+    width: 32px;
+    height: 32px;
+    transition: fill var(--animation);
+  }
+
   &:focus .socials__icon {
     fill: var(--secondary-text-color);
     width: 38px;
     height: 38px;
+    transition: fill var(--animation);
   }
-  transition: fill var(--animation), width var(--animation),
-    height var(--animation);
 }
 .socials__icon {
   fill: var(--primary-bg-color);
