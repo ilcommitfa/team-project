@@ -42,10 +42,11 @@ header {
     }
   }
 }
-.buttons {
+.buttoms {
   display: flex;
   justify-content: center;
   align-items: center;
+}
 
   .menu-burger-btn {
     display: none;
@@ -94,6 +95,9 @@ header {
     padding-right: 34px;
     padding-top: 12px;
     padding-bottom: 12px;
+      transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 0s;
       &:hover {
           background-color: #0a8817;
         }
@@ -107,7 +111,7 @@ header {
           background-color: #ABABAB;
           fill: #000000;
         }
-      }
+      
 
     @media screen and (max-width: 320px) {
       display: none;
@@ -136,7 +140,7 @@ header {
   transform: translateX(0);
 }
 
-.mob-buttons {
+.mob-buttoms {
   display: flex;
   text-align: center;
   align-items: center;
