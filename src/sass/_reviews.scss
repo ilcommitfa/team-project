@@ -26,6 +26,7 @@ body {
   align-items: flex-end;
   justify-content: center;
   background-image: url(../images/customer-reviews/icecreamdesk.png);
+  position: relative;
 }
 .review__nav {
   width: 12px;
@@ -73,6 +74,15 @@ body {
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
+  margin-top: 50px;
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    margin-top: 75px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-top: 130px;
+  }
 }
 .review__image {
   font-size: 2.7rem;
