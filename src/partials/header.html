@@ -17,9 +17,10 @@
 </nav>
 
 <div class="buttons">
- <button class="menu-burger-btn" type="button" data-menu-open>
-          <svg width="32" height="32">
-            <use href="images/icons.svg#icon-open"></use>
+ <button class="menu-burger-btn js-open-menu" type="button" data-menu-button>
+          <svg width="32" height="32"
+          aria-label="Переключатель мобільного меню">
+            <use class="icon-menu" href="images/icons.svg#icon-open"></use>
           </svg>
         </button>
  <button class="header-btn" type="button">
@@ -36,4 +37,52 @@
 
 </div>
 
+ <!-- Мобільне меню -->
+ <div class="mob-menu js-menu-container" id="mobile-menu">
+  <div class="container">
+  <div class="mob-buttons">
+   <img src="images/logo.png" alt="logo" width="60" class="header-logo"/>
+   <button class="mob-burger-btn js-close-menu" type="button" data-menu-button>
+          <svg width="32" height="32"
+          aria-label="Переключатель мобільного меню">
+            <use class="icon-cross" href="images/icons.svg#menu_close"></use>
+          </svg>
+            </button>
+            </div>
+   <nav class="nav-mob">
+<ul class="nav-mob-list">
+    <li class="nav-mob-item">
+  <a class="nav-mob-link" href="">Home</a>
+  <li class="nav-mob-item">
+  <a class="nav-mob-link" href="">How it’s made?</a>
+  <li class="nav-mob-item">
+  <a class="nav-mob-link" href="">Our products</a>
+  <li class="nav-mob-item">
+  <a class="nav-mob-link" href="">Contact</a>
+</li>
+</ul>
+</nav>
+
+
+       <button class="header-mob-btn" type="button">
+    Buy now
+          <svg
+                class="icon-header-arrow"
+                height="12"
+                width="12"
+              >
+                <use href="images/icons.svg#icon-header-arrow"></use>
+              </svg>
+          </button>
+    </div>   
+ </div>
+
 </header>
+
+  <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="js/mobile-menu.js"></script>
