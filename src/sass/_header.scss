@@ -1,9 +1,18 @@
-
+header {
+background: var(--primary-bg-color);
+padding-top: 18px;
+@media screen and (max-width: 1199px) {
+  padding-top: 20px;
+  }
+    @media screen and (max-width: 767px) {
+      padding-top: 12px;
+    }
+}
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--primary-bg-color);
+ 
   .nav {
     @media screen and (max-width: 1199px) {
       display: none;
@@ -85,6 +94,8 @@
                 padding-right: 34px;
                 padding-top: 12px;
                 padding-bottom: 12px;
+
+
     @media screen and (max-width: 320px) {
       display: none;
     }
