@@ -1,67 +1,67 @@
-// .gallery__list {
-//   position: relative;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-// }
+.gallery__list {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-// .gallery__item {
-//   visibility: hidden;
-//   position: absolute;
-//   top: 70%;
-//   left: 50%;
-//   transform: translate(-50%, -30%);
+.gallery__item {
+  visibility: hidden;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -30%);
 
-//   animation: 12s autoplay infinite;
+  animation: 12s autoplay infinite;
 
-//   &:nth-child(1) {
-//     animation-delay: 0s;
-//   }
+  &:nth-child(1) {
+    animation-delay: 0s;
+  }
 
-//   &:nth-child(2) {
-//     animation-delay: 4s;
-//   }
+  &:nth-child(2) {
+    animation-delay: 4s;
+  }
 
-//   &:nth-child(3) {
-//     animation-delay: 8s;
-//   }
+  &:nth-child(3) {
+    animation-delay: 8s;
+  }
 
-//   @media screen and(min-width: 768px) {
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//   }
+  @media screen and(min-width: 768px) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
-//   @media screen and(min-width: 1200px) {
-//     top: 70%;
-//     left: 50%;
-//     transform: translate(-50%, -30%);
-//   }
-// }
+  @media screen and(min-width: 1200px) {
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+  }
+}
 
-// .gallery__img {
-//   width: 279px;
-//   height: 130px;
-//   border-radius: 7px;
+.gallery__img {
+  width: 279px;
+  height: 130px;
+  border-radius: 7px;
 
-//   @media screen and(min-width: 768px) {
-//     border-radius: 18px;
-//     width: 704px;
-//     height: 327px;
-//   }
+  @media screen and(min-width: 768px) {
+    border-radius: 18px;
+    width: 704px;
+    height: 327px;
+  }
 
-//   @media screen and(min-width: 1200px) {
-//     border-radius: 24px;
-//     width: 1013px;
-//     height: 422px;
-//   }
-// }
+  @media screen and(min-width: 1200px) {
+    border-radius: 24px;
+    width: 1013px;
+    height: 422px;
+  }
+}
 
-// @keyframes autoplay {
-//   0% {
-//     visibility: visible;
-//   }
-//   33.33% {
-//     visibility: hidden;
-//   }
-// }
+@keyframes autoplay {
+  0% {
+    visibility: visible;
+  }
+  33.33% {
+    visibility: hidden;
+  }
+}
