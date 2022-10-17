@@ -128,8 +128,9 @@ header {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 200;
+  z-index: 20000;
   padding-top: 20px;
+      overflow: hidden;
 
   transform: translateX(100%);
   transition: transform cubic-bezier(0.4, 0, 0.2, 1);
