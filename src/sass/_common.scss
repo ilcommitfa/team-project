@@ -4,6 +4,10 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+html, body {
+    height: 100%;
+}
+
 .visually-hidden {
     position: absolute;
     width: 1px;
