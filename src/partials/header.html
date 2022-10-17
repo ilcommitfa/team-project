@@ -1,6 +1,6 @@
 <header>
-<div class="container header-container">
- <img src="images/logo.png" alt="logo" width="60" class="header-logo"/>
+  <div class="container header-container">
+    <img src="images/logo.png" alt="logo" width="60" class="header-logo" />
 
 <nav class="nav">
 <ul class="nav-list">
@@ -16,24 +16,72 @@
 </ul>
 </nav>
 
-<div class="buttons">
- <button class="menu-burger-btn" type="button" data-menu-open>
-          <svg width="32" height="32">
-            <use href="images/icons.svg#icon-open"></use>
+    <div class="buttoms">
+      <button
+        class="menu-burger-btn js-open-menu"
+       type="button"
+         aria-expanded="false"
+            aria-controls="mobile-menu" 
+      >
+        <svg width="32" height="32" aria-label="Переключатель мобільного меню">
+          <use class="icon-menu" href="images/icons.svg#icon-open"></use>
+        </svg>
+      </button>
+      <button class="header-btn" type="button">
+        Buy now
+        <svg class="icon-header-arrow" height="12" width="12">
+          <use href="images/icons.svg#icon-header-arrow"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Мобільне меню -->
+  <div class="mob-menu js-menu-container" id="mobile-menu">
+    <div class="container">
+      <div class="mob-buttoms">
+        <img src="images/logo.png" alt="logo" width="60" class="header-logo" />
+        <button
+          class="mob-burger-btn js-close-menu"
+          type="button"
+        >
+          <svg
+            width="32"
+            height="32"
+            aria-label="Переключатель мобільного меню"
+          >
+            <use class="icon-cross" href="images/icons.svg#menu_close"></use>
           </svg>
         </button>
- <button class="header-btn" type="button">
-    Buy now
-          <svg
-                class="icon-header-arrow"
-                height="12"
-                width="12"
-              >
-                <use href="images/icons.svg#icon-header-arrow"></use>
-              </svg>
-          </button>
-</div>
+      </div>
+      <nav class="nav-mob">
+        <ul class="nav-mob-list">
+          <li class="nav-mob-item">
+            <a class="nav-mob-link" href="">Home</a>
+          </li>
 
-</div>
+          <li class="nav-mob-item">
+            <a class="nav-mob-link" href="">How it’s made?</a>
+          </li>
 
+          <li class="nav-mob-item">
+            <a class="nav-mob-link" href="">Our products</a>
+          </li>
+
+          <li class="nav-mob-item">
+            <a class="nav-mob-link" href="">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="header-mob-btn" type="button">
+        Buy now
+        <svg class="icon-header-arrow" height="12" width="12">
+          <use href="images/icons.svg#icon-header-arrow"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
 </header>
+
+ 
