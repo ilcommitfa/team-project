@@ -1,0 +1,58 @@
+<div class="franchise-backdrop is-hidden" franchise-modal>
+  <div class="franchise-modal">
+    <button class="franchise-modal-close" franchise-modal-close>
+      <svg class="icon-close" width="16" height="16">
+        <use href="./images/icons.svg#modal_close"></use>
+      </svg>
+    </button>
+    <form>
+      <p class="franchise-title">
+        Thank you for your interest in owning an Ice Cream shop
+      </p>
+      <p class="franchise-text">
+        Due to the overwhelming volume of franchise requests we are not
+        accepting new franchisee applications at this time. Once the application
+        process resumes, we will contact you for further information. Please
+        fill out the contact information below and we will reach out for
+        additional information. We appreciate your patience.
+      </p>
+      <div class="franchise-modal-container">
+        <label for="user-name"></label>
+        <input
+          class="franchise-input"
+          type="text"
+          name="user-name"
+          id="user-name"
+          placeholder="Name"
+          required
+          pattern="^[a-zA-Z]+\s[a-zA-Z]+$"
+          title="Username must be two words separated by space."
+        />
+        <label for="user-phone"></label>
+        <input
+          class="franchise-input"
+          type="text"
+          name="user-phone"
+          id="user-phone"
+          placeholder="Phone"
+        />
+        <label for="user-email"></label>
+        <input
+          class="franchise-input"
+          type="email"
+          name="user-email"
+          id="user-email"
+          placeholder="E-mail"
+        />
+        <label for="user-comment"></label>
+        <textarea
+          class="franchise-input textarea"
+          name="user-comment"
+          id="user-comment"
+          placeholder="Comment"
+        ></textarea>
+      </div>
+      <button class="franchise-modal-submit" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
