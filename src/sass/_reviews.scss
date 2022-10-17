@@ -13,7 +13,7 @@ body {
 
 body {
   color: #444;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -25,8 +25,16 @@ body {
   flex-flow: row nowrap;
   align-items: flex-end;
   justify-content: center;
-  background-image: url(../images/customer-reviews/icecreamdesk.png);
+  background-image: url(../images/customer-reviews/icecreammob.png);
   position: relative;
+
+  @media screen and (min-width: 768px) {
+    background-image: url(../images/customer-reviews/icecreamtab.png);
+  }
+
+  @media screen and (min-width: 1200px) {
+    background-image: url(../images/customer-reviews/icecreamdesk.png);
+  }
 }
 .review__nav {
   width: 12px;
