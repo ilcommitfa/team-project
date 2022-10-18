@@ -51,15 +51,13 @@
     border: 2px solid var(--accent-color);
     border-radius: 10px;
 
-    @media screen and (min-width: 0px) {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100%;
-        max-width: 280px;
-        transform: translate(-50%, -50%) scale(1);
-        transition: transform var(--animation);
-    }
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    max-width: 280px;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform var(--animation);
 
     @media screen and (min-width: 768px) {
         width: 100%;
