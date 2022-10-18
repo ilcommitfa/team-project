@@ -1,68 +1,75 @@
-.gallery__list {
-  z-index: 10000;
+.gallery {
   position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
-.gallery__item {
-  visibility: hidden;
+.gallery__slider {
   position: absolute;
+  transform: translate(-50%, -30%);
   top: 70%;
   left: 50%;
-  transform: translate(-50%, -30%);
+  z-index: 10;
 
-  animation: 12s autoplay infinite;
-
-  &:nth-child(1) {
-    animation-delay: 0s;
-  }
-
-  &:nth-child(2) {
-    animation-delay: 4s;
-  }
-
-  &:nth-child(3) {
-    animation-delay: 8s;
-  }
-
-  @media screen and(min-width: 768px) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  @media screen and(min-width: 1200px) {
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -30%);
-  }
-}
-
-.gallery__img {
   width: 279px;
   height: 130px;
+
   border-radius: 7px;
+  overflow: hidden;
 
   @media screen and(min-width: 768px) {
     border-radius: 18px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 704px;
     height: 327px;
   }
 
   @media screen and(min-width: 1200px) {
     border-radius: 24px;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -30%);
     width: 1013px;
     height: 422px;
   }
 }
 
-@keyframes autoplay {
+.gallery__list {
+  animation: slide 16s infinite;
+  display: flex;
+}
+
+@keyframes slide {
   0% {
-    visibility: visible;
+    transform: translateX(0);
+    transition: transform var(--animation);
   }
-  33% {
-    visibility: hidden;
+  25% {
+    transform: translateX(0);
+    transition: transform var(--animation);
+  }
+  30% {
+    transform: translateX(-100%);
+    transition: transform var(--animation);
+  }
+  50% {
+    transform: translateX(-100%);
+    transition: transform var(--animation);
+  }
+  55% {
+    transform: translateX(-200%);
+    transition: transform var(--animation);
+  }
+  75% {
+    transform: translateX(-200%);
+    transition: transform var(--animation);
+  }
+  80% {
+    transform: translateX(-300%);
+    transition: transform var(--animation);
+  }
+  100% {
+    transform: translateX(-300%);
+    transition: transform var(--animation);
   }
 }

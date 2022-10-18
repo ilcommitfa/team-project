@@ -1,0 +1,981 @@
+/* Стили для подложки */
+.overlay {
+   /* Скрываем подложку  */
+   opacity: 0;
+   visibility: hidden;
+   
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(132,161,120,.5);
+   z-index: 20;
+   transition: .3s all;
+}
+
+/* Временные стили для кнопок для теста модалок */
+.modal-open-btn {
+   padding: 20px;
+   background-color: var(--accent-color);
+   margin: 10px;
+   color: var(--primary-text-color);
+   border-radius: 5px;
+   cursor: pointer;
+
+    &:hover,
+    &:focus {
+      border-color: var(--primary-bg-color);
+    }
+}
+
+
+
+// < -- Buy now - #1 -------------------------------->
+
+.backdrop__buy-now {
+  /* Скрываем окна  */
+  opacity: 0;
+  visibility: hidden;
+
+  /*  Центрируем и задаем z-index */
+  position: fixed;
+  z-index: 25; /* Должен быть выше чем у подложки*/
+  top: 0;
+  left: 0;
+
+  /*  Побочные стили   */
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+            visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  overflow-y: scroll;
+
+}
+/* Стили для активных классов подложки и окна */
+.backdrop__buy-now.active,
+.overlay.active {
+   opacity: 1;
+   visibility: visible;
+}
+
+.buy-now {
+  position: relative;
+  // позиціонування на мобілці
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%) translateY(0%) scale(1);
+
+  @media screen and (min-width: 768px) {
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%) scale(1);
+    }
+
+  border: 2px solid var(--accent-color);
+  border-radius: 10px;
+  padding: 28px;
+  max-height: 966px;
+  width: 280px;
+  text-align: center;
+  background-color: #fff;
+
+  &__header {
+    font-family: 'Seymour One';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--primary-text-color);
+    margin-bottom: 20px;
+  }
+
+  &__label {
+    cursor: pointer;
+    position: relative;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--primary-text-color);
+    display: block;
+    width: 132px;
+    height: 198px;
+    display: flex;
+    align-items: flex-end;
+    &:not(:last-child) {
+      margin: 0 auto 20px;
+    }
+    &:last-child {
+      margin: 0 auto 24px;
+    }
+  }
+
+  &__input {
+    background-color: rgba(248, 210, 78, 0.1);
+    border: 1px solid var(--primary-bg-color);
+    border-radius: 10px;
+    padding: 8px 12px;
+    width: 100%;
+    margin-bottom: 12px;
+    &::placeholder {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 17px;
+      color: var(--primary-text-color);
+    }
+  }
+
+  &__comment {
+    background-color: rgba(248, 210, 78, 0.1);
+    border: 1px solid var(--primary-bg-color);
+    border-radius: 10px;
+    padding: 8px 12px;
+    width: 100%;
+    margin-bottom: 24px;
+    &::placeholder {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 17px;
+      color: #000000;
+    }
+  }
+
+  &__btn {
+    margin: 0 auto;
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: transparent;
+    // height: 16px;
+    // width: 16px;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    border-color: transparent;
+    align-items: center;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0;
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+      color: var(--accent-color);
+    }
+  }
+
+  &__close-icon {
+    // width: 16px;
+    // height: 16px;
+    fill: currentColor;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .buy-now {
+    width: 568px;
+    padding: 32px 54px;    
+    &__header {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 28px;
+      margin-bottom: 40px;
+    }
+    &__label {
+      &:not(:last-child) {
+        margin: 0 32px 0 0;
+      }
+      &:last-child {
+        margin: 0;
+      }
+    }
+    &__input {
+      padding: 11px 16px;
+      margin-bottom: 16px;
+      width: 368px;
+      &::placeholder {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;   
+      }
+    }
+    &__comment {
+      padding: 11px 16px;
+      width: 368px;
+      margin-bottom: 32px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;   
+    }
+    &__close-btn {
+      top: 20px;
+      right: 20px;
+      // height: 20px;
+      // width: 20px;
+      padding: 4px;
+      border-radius: 50%;
+
+    }
+    &__close-icon {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  .label__wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+}
+
+.checkbox {
+  display: flex;
+  height: 135px;
+  width: 132px;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 20px;
+
+  filter: drop-shadow(0px 5.26027px 19.726px rgba(212, 20, 67, 0.1));
+  border-radius: 15.7808px;
+}
+
+.buy-now__checkbox:checked + .checkbox__ice-cream {
+  background-color: var(--products-color1);
+}
+.buy-now__checkbox:checked + .checkbox__ice-coffee {
+  background-color: var(--products-color2);
+}
+.buy-now__checkbox:checked + .checkbox__milkshake {
+  background-color: var(--products-color3);
+}
+
+.checkbox__ice-cream {
+  border: 2px solid #96af8c;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  &::before {
+    display: block;
+    content: '';
+    height: 130px;
+    width: 132px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: -44%;
+
+    background: linear-gradient(
+        0deg,
+        rgba(156, 190, 143, 0.7),
+        rgba(156, 190, 143, 0.7)
+      ),
+      #d9d9d9;
+    box-shadow: 0px 5.26027px 19.726px rgba(10, 136, 23, 0.25);
+  }
+  &::after {
+    display: block;
+    content: '';
+    height: 130px;
+    width: 132px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: -50%;
+    background-position: center;
+    background-size: cover;
+    background-image: url('../images/modal/ice-cream-mobile_1x.jpeg');
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url('../images/modal/ice-cream-mobile_2x.jpeg');
+    }
+  }
+}
+
+.checkbox__ice-coffee {
+  border: 2px solid var(--products-color2);
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  &::before {
+    display: block;
+    content: '';
+    height: 130px;
+    width: 132px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: -44%;
+    background: linear-gradient(
+        0deg,
+        rgba(248, 210, 78, 0.7),
+        rgba(248, 210, 78, 0.7)
+      ),
+      #d9d9d9;
+    box-shadow: 0px 5.26027px 19.726px rgba(153, 114, 23, 0.25);
+  }
+  &::after {
+    display: block;
+    content: '';
+    height: 130px;
+    width: 132px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: -50%;
+    background-position: center;
+    background-size: cover;
+    background-image: url('/src/images/modal/ice-coffee-mobile_1x.jpeg');
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url('/src/images/modal/ice-coffee-mobile_2x.jpeg');
+    }
+  }
+}
+
+.checkbox__milkshake {
+  border: 2px solid var(--products-color3);
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  &::before {
+    display: block;
+    content: '';
+    height: 130px;
+    width: 132px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: -44%;
+    background: linear-gradient(
+        0deg,
+        rgba(213, 117, 63, 0.7),
+        rgba(213, 117, 63, 0.7)
+      ),
+      #d9d9d9;
+    box-shadow: 0px 5.26027px 19.726px rgba(0, 0, 0, 0.25);
+  }
+  &::after {
+    display: block;
+    content: '';
+    height: 130px;
+    width: 132px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: -50%;
+    background-position: center;
+    background-size: cover;
+    background-image: url('/src/images/modal/milkshake-mobile_1x.jpeg');
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url('/src/images/modal/milkshake-mobile_2x.jpeg');
+    }
+  }
+}
+
+
+// < -- How it's made - #2 ----------------------------->
+
+.read-more-modal {
+    /* Скрываем окна  */
+    opacity: 0;
+    visibility: hidden;
+
+    /*  Центрируем и задаем z-index */
+    position: absolute;
+    z-index: 25; /* Должен быть выше чем у подложки*/
+    // позиціонування на мобілці
+    top: 50%;
+    left: 50%;
+  
+    /*  Побочные стили   */
+    background-color: var(--secondary-text-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 28px;
+    transform: translate(0%)scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 3px rgba(0,0,0,.12),0 1px 1px rgba(0,0,0,.14),0 2px 1px rgba(0,0,0,.2);
+}
+
+/* Стили для активных классов подложки и окна */
+.read-more-modal.active,
+.overlay.active {
+   opacity: 1;
+   visibility: visible;
+}
+
+.read-more-button {
+    /*  Центрируем и задаем z-index */
+    position: fixed;
+
+    /*  Побочные стили   */
+    top: 20px;
+    right: 20px;
+    border: none;
+    color: var(--primary-text-color);
+    cursor: pointer;
+    background-color: transparent;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &__icon {
+        transform: scale(1);
+    }
+
+    &:hover,
+    &:focus {
+        transform: scale(1.7);
+        fill: var(--accent-color);
+    }
+}
+
+.read-more-title {
+    font-family: 'Seymour One';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--primary-text-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.read-more-video {
+    width: 224px;
+    height: 199px;
+    margin-bottom: 20px;
+}
+
+.read-more-text {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--primary-text-color);
+}
+
+@media screen and (max-width: 479px) {
+    .read-more-modal {
+        max-width: 280px;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .read-more-modal {
+        max-width: 280px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .read-more-modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        height: 458px;
+        min-width: 568px;
+        padding: 32px 60px;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .read-more-button {
+        top: 20px;
+        right: 20px;
+    }
+
+    .read-more-title {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 28px;
+        margin-bottom: 32px;
+    }
+
+    .read-more-video {
+        width: 448px;
+        height: 205px;
+        margin-bottom: 32px;
+    }
+
+    .read-more-text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+
+
+
+// < -- Chololate Ingredients - #3 ---------------------->
+
+
+.modal-ingredients {
+    /* Скрываем окна  */
+    opacity: 0;
+    visibility: hidden;
+
+    /*  Центрируем и задаем z-index */
+    position: fixed;
+    z-index: 25;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+    background-color: var(--secondary-bg-color);
+    transition: opacity 250ms linear, visibility 250ms linear;
+    overflow-y: scroll;
+}
+
+.modal-ingredients.active,
+.overlay.active {
+   opacity: 1;
+   visibility: visible;
+}
+
+.icecream {
+  position: relative;
+
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%) translateY(0%) scale(1);
+
+  border: 2px solid var(--accent-color);
+  border-radius: 10px;
+  padding: 28px 20px 32px;
+  max-width: 280px;
+  background-color: var(--secondary-text-color);
+  text-align: center;
+
+  &__header {
+    text-align: center;
+    position: relative;
+    font-family: 'Seymour One';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 24px;
+    color: var(--primary-text-color);
+
+    &::after {
+      content: '';
+      display: block;
+      width: 130px;
+      height: 131px;
+      border-radius: 50%;
+      margin-top: 29px;
+      background: linear-gradient(
+          0deg,
+          rgba(156, 190, 143, 0.7),
+          rgba(156, 190, 143, 0.7)
+        ),
+        #d9d9d9;
+      box-shadow: 0px 5.26027px 19.726px rgba(10, 136, 23, 0.25);
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 130px;
+      height: 131px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -25%);
+      background-image: url('../images/modal/chocolate-icecream_1x.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      @media screen and (min-device-pixel-ratio: 2),
+        screen and (min-resolution: 192dpi),
+        screen and (min-resolution: 2dppx) {
+        background-image: url('../images/modal/chocolate-icecream_2x.jpg');
+      }
+    }
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 0;
+    background-color: transparent;
+    border-color: transparent;
+    // height: 16px;
+    // width: 16px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+      color: var(--accent-color);
+    }
+  }
+  
+  &__close-icon {
+    // width: 16px;
+    // height: 16px;
+    fill: currentColor;
+  }
+  &__list {
+    list-style: none;
+	padding: 0;
+	margin: 0;
+    display: flex;
+    gap: 9px;
+    margin-bottom: 39px;
+  }
+  &__item {
+    position: relative;
+    width: 53px;
+    height: 72px;
+    border: 2px solid #9cbe8f;
+    border-radius: 40px;
+    padding-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: transparent;
+  }
+  &__descr {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: var(--primary-text-color);
+  }
+  &__numbers {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 28px;    
+    color: var(--primary-text-color);
+    position: absolute;
+    top: -1px;
+    left: 3px;
+    width: 43px;
+    height: 43px;
+    display: block;
+    background-color: #9cbe8f;
+    border: 2px solid #9cbe8f;
+    border-radius: 50%;
+    box-shadow: 0px 6px 20px rgba(10, 136, 23, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__ingredients {
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    color: var(--primary-text-color);
+  }
+  &__grid {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 25px;
+    letter-spacing: 0.04em;
+    width: 240px;
+    color: var(--primary-text-color);
+    margin-bottom: 48px;
+    margin-top: 24px;
+
+    .grid__row {
+      display: flex;
+      justify-content: space-between;
+
+      &:not(:last-child) {
+        margin-bottom: 11px;
+      }
+    }
+  }
+  &__input {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--primary-text-color);
+    width: 100%;
+    padding: 11px;
+    background: rgba(248, 210, 78, 0.1);
+    border: 1px solid var(--primary-bg-color);
+    border-radius: 10px;
+    margin-bottom: 16px;
+
+    &::placeholder {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--primary-text-color);
+    }
+  }
+  &__comment {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: var(--primary-text-color);
+        width: 100%;
+        height: 84px;
+        padding: 11px;
+        background: rgba(248, 210, 78, 0.1);
+        border: 1px solid var(--primary-bg-color);
+        border-radius: 10px;
+        margin-bottom: 30px;
+    
+        &::placeholder {
+        font-weight: 400;
+        font-size: 14px;
+        color: var(--primary-text-color);
+        line-height: 20px;
+        }
+  }
+
+  &__btn {
+        margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .icecream {
+        max-width: 528px;
+        padding: 32px 20px;
+    &__header::before {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -35%);
+    }
+    &__header::after {
+        margin-top: 31px;
+    }
+    &__close-btn {
+        top: 20px;
+        right: 20px;
+        width: 20px;
+        height: 20px;
+    }
+    &__list {
+        gap: 20px;
+        justify-content: center;
+    }
+    &__item {
+        width: 65px;
+        height: 90px;
+        padding-bottom: 14px;
+    }
+    &__numbers {
+        width: 53px;
+        height: 53px;
+        left: 4px;
+        font-size: 12px;
+    }
+    &__descr {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+    }
+    &__grid {
+        width: 100%;
+    }
+    &__input {
+        width: 368px;
+        padding: 11px 16px;
+    }
+    &__comment {
+        width: 368px;
+        padding: 11px 16px;
+    }
+  }
+}
+
+.btn-fill {
+    font-family: Montserrat;
+    text-align: center;
+    max-width: 132px;
+    background-color: var(--accent-color);
+    color: var(--primary-text-color);
+    border: none;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 12px 34px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.25;
+    transition: background-color .25s linear;
+    display: block;
+
+    &:hover, &:focus {
+    background-color: #0a8817;
+  }
+}
+@media screen and (min-width: 768px) {
+    .btn-fill {
+        max-width: 121px;
+        padding: 12px 34px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.214;
+    }
+}
+
+
+
+// < -- Our location modal - #4 --------------------->
+
+.modal-location {
+    /* Скрываем окна  */
+    opacity: 0;
+    visibility: hidden;
+
+    /*  Центрируем и задаем z-index */
+    position: fixed;
+    z-index: 25; /* Должен быть выше чем у подложки*/
+    top: 50%;
+    left: 50%;
+
+    /*  Побочные стили   */
+    background-color: #fff;
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 28px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12),0 1px 1px rgba(0,0,0,.14),0 2px 1px rgba(0,0,0,.2);
+    // transform: translate(0%)scale(1);
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Стили для активных классов подложки и окна */
+.modal-location.active,
+.overlay.active {
+   opacity: 1;
+   visibility: visible;
+}
+
+
+@media screen and (max-width: 479px) {
+    .modal-location {
+        max-width: 280px;
+    }
+}
+@media screen and (min-width: 480px) {
+    .modal-location {
+        max-width: 280px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .modal-location {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        height: 458px;
+        min-width: 568px;
+        padding: 32px 60px;
+        transform: translate(-50%, -50%) scale(1);
+
+        // .backdrop.is-hidden & {
+        // transform: translate(-50%, -50%) scale(1.1);
+        // }
+    }
+
+    .modal-location-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .modal-location-text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 32px;
+    }
+
+    iframe {
+        height: 205px;
+        margin-bottom: 32px;
+    }
+
+    .open-map-link {
+        max-width: 150px;
+        padding: 12px 34px;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+.modal-location-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &__icon {
+        transform: scale(1);
+    }
+
+    &:hover,
+    &:focus {
+        transform: scale(1.1);
+        fill: var(--accent-color);
+    }
+}
+
+.modal-location-text {
+    font-family: 'Seymour One';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--primary-text-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+iframe {
+    width: 100%;
+    height: 260px;
+    border-radius: 10px;
+    margin-bottom: 24px;
+}
+
+.open-map-link {
+    font-family: Montserrat;
+    text-align: center;
+    max-width: 150px;
+    background-color: var(--accent-color);
+    color: var(--primary-text-color);
+    border: none;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 12px 34px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.25;
+    transition: background-color .25s linear;
+    display: block;
+
+    &:hover, &:focus {
+    background-color: #0a8817;
+  }
+}
+
+@media screen and (min-width: 768px) {
+    .open-map-link {
+        max-width: 145px;
+        padding: 12px 34px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.214;
+    }
+}
