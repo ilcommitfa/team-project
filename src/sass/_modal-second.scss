@@ -1,20 +1,9 @@
-/* Стили для подложки */
-.overlay {
-   /* Скрываем подложку  */
-   opacity: 0;
-   visibility: hidden;
-   
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background-color: rgba(132,161,120,.5);
-   z-index: 20;
-   transition: .3s all;
-}
-
 /* Временные стили для кнопок для теста модалок */
+.div--btn {
+  padding: 10px 0 30px;
+  display: flex;
+  justify-content: space-around;
+}
 .modal-open-btn {
    padding: 20px;
    background-color: var(--accent-color);
@@ -25,18 +14,17 @@
 
     &:hover,
     &:focus {
-      border-color: var(--primary-bg-color);
+      border-color: red;
     }
 }
 
-
-
+/* Cтили для модалок */
 // < -- Buy now - #1 -------------------------------->
 
 .backdrop__buy-now {
   /* Скрываем окна  */
-  opacity: 0;
-  visibility: hidden;
+  // opacity: 0;
+  // visibility: hidden;
 
   /*  Центрируем и задаем z-index */
   position: fixed;
@@ -47,31 +35,32 @@
   /*  Побочные стили   */
   height: 100%;
   width: 100%;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.2);
 
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), 
             visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   overflow-y: scroll;
 
-}
-/* Стили для активных классов подложки и окна */
-.backdrop__buy-now.active,
-.overlay.active {
-   opacity: 1;
-   visibility: visible;
-}
+  &.is-buy-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
 
+}
+.modal__buy-now {
+    overflow-y: scroll;
+}
 .buy-now {
   position: relative;
-  // позиціонування на мобілці
   top: 15px;
   left: 50%;
-  transform: translateX(-50%) translateY(0%) scale(1);
+  transform: translateX(-50%) translateY(3%) scale(1);
 
   @media screen and (min-width: 768px) {
       top: 50%;
-      transform: translateX(-50%) translateY(-50%) scale(1);
+      // transform: translateX(-50%) translateY(-50%) scale(1);
     }
 
   border: 2px solid var(--accent-color);
@@ -81,6 +70,7 @@
   width: 280px;
   text-align: center;
   background-color: #fff;
+  overflow-y: scroll;
 
   &__header {
     font-family: 'Seymour One';
@@ -376,36 +366,49 @@
 }
 
 
+
+
 // < -- How it's made - #2 ----------------------------->
 
-.read-more-modal {
-    /* Скрываем окна  */
+
+
+.backdrop__read-more {
+    /*  Центрируем и задаем z-index */
+    position: fixed;
+    z-index: 25; /* Должен быть выше чем у подложки*/
+    top: 0;
+    left: 0;  
+    /*  Побочные стили   */
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+ 
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        
+    &.is-readmore-hidden {
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
+  }
+}
 
-    /*  Центрируем и задаем z-index */
-    position: absolute;
-    z-index: 25; /* Должен быть выше чем у подложки*/
-    // позиціонування на мобілці
+.read-more-modal {
+    position: relative;
+    border: 2px solid var(--accent-color); 
     top: 50%;
-    left: 50%;
-  
+    left: 50%;  
     /*  Побочные стили   */
+    height: 100%;
+    width: 100%;
+    transform: translateX(-90%) translateY(-45%) scale(1);
     background-color: var(--secondary-text-color);
-    border: 2px solid var(--accent-color);
     border-radius: 10px;
     margin: 0 auto;
     padding: 28px;
-    transform: translate(0%)scale(1);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 1px 3px rgba(0,0,0,.12),0 1px 1px rgba(0,0,0,.14),0 2px 1px rgba(0,0,0,.2);
-}
 
-/* Стили для активных классов подложки и окна */
-.read-more-modal.active,
-.overlay.active {
-   opacity: 1;
-   visibility: visible;
 }
 
 .read-more-button {
@@ -509,29 +512,35 @@
 // < -- Chololate Ingredients - #3 ---------------------->
 
 
+
 .modal-ingredients {
     /* Скрываем окна  */
-    opacity: 0;
-    visibility: hidden;
+    // opacity: 0;
+    // visibility: hidden;
 
     /*  Центрируем и задаем z-index */
-    position: fixed;
+    position: absolute;
     z-index: 25;
-    top: 0;
-    left: 0;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-    height: 100%;
-    width: 100%;
-    background-color: var(--secondary-bg-color);
+    // height: 100%;
+    // width: 100%;
+    padding: 15px 10px;
+    border: 2px solid var(--accent-color);
+    background-color: var(--secondary-text-color);
     transition: opacity 250ms linear, visibility 250ms linear;
+    border-radius: 10px;
     overflow-y: scroll;
+   
+    &.is-ingredients-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
 }
 
-.modal-ingredients.active,
-.overlay.active {
-   opacity: 1;
-   visibility: visible;
-}
 
 .icecream {
   position: relative;
@@ -540,8 +549,9 @@
   left: 50%;
   transform: translateX(-50%) translateY(0%) scale(1);
 
-  border: 2px solid var(--accent-color);
-  border-radius: 10px;
+  // border: 2px solid var(--accent-color);
+  // border-radius: 10px;
+  width: 100%;
   padding: 28px 20px 32px;
   max-width: 280px;
   background-color: var(--secondary-text-color);
@@ -831,8 +841,8 @@
 
 .modal-location {
     /* Скрываем окна  */
-    opacity: 0;
-    visibility: hidden;
+    // opacity: 0;
+    // visibility: hidden;
 
     /*  Центрируем и задаем z-index */
     position: fixed;
@@ -850,15 +860,13 @@
     // transform: translate(0%)scale(1);
     transform: translate(-50%, -50%) scale(1);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-/* Стили для активных классов подложки и окна */
-.modal-location.active,
-.overlay.active {
-   opacity: 1;
-   visibility: visible;
-}
-
+    &.is-location-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    }
+  }
 
 @media screen and (max-width: 479px) {
     .modal-location {
@@ -879,6 +887,8 @@
         min-width: 568px;
         padding: 32px 60px;
         transform: translate(-50%, -50%) scale(1);
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 
         // .backdrop.is-hidden & {
         // transform: translate(-50%, -50%) scale(1.1);
