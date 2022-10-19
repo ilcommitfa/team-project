@@ -77,9 +77,10 @@
     top:25px;
     left:0;
     transform: translate(10% 20%);
+    
     @media screen and (min-width:768px){
     top:40px; 
-    }
+}
     @media screen and (min-width:1200px){
     top:50px;
     transform: translateX(-2%);
@@ -113,7 +114,7 @@
         @media screen and (min-width:1200px){
             width:465px;    
         }
-    
+ 
 
 }
 .about__text-decor{
@@ -149,6 +150,7 @@
      display: flex;
     flex-direction:row;
     align-items:center;
+    justify-content: center;
     width: 164px;
     height: 42px;
     padding: 12px 32px;
@@ -169,6 +171,7 @@
     @media screen and (min-width:1200px){
         margin: 40px auto 40px 0px ;
     }
+
  }
     .about__button:hover{
         background-color: #0A8817;
@@ -176,6 +179,7 @@
     .about__button:focus{
         border:2px solid  #0A8817;
         color:var(--secondary-text-color);
+
     }
      .about__button:disabled{
         border:2px solid #ABABAB;
