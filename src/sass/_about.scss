@@ -177,7 +177,8 @@
         background-color: #0A8817;
     } 
     .about__button:focus{
-        border:2px solid  #0A8817;
+        background-color: #0A8817;
+        border: transparent;
         color:var(--secondary-text-color);
 
     }
