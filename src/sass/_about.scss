@@ -1,6 +1,10 @@
 .about{
     background-color:var(--primary-bg-color) ;
     padding-top: 60px;
+    padding-bottom: 10px;
+    @media screen and (min-width:768px){
+        padding-bottom: 50px;
+    }
  }
  .about__container{
     display: flex;
@@ -28,12 +32,16 @@
   text-align: center;
   text-transform: uppercase;
   color: var(--secondary-text-color);
-  width: 200px;
-  margin:0 auto;
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
   @media screen and (min-width:768px){
-    width: 455px;
+    max-width: 455px;
   }
- 
+  @media screen and (min-width:768px){
+    max-width:481px ;
+  }
 }
 
 
@@ -41,8 +49,8 @@
     position:relative;
     width: 279px;
     height: 300px;
-    display: block;
     margin-bottom: 40px;
+    display: block;
     background-repeat: no-repeat;
     background-position:center;
     background-size:cover;
@@ -62,7 +70,6 @@
     position:absolute;
     top:0;
     left:-6%;
-  
     
 }
 .about__pic{
@@ -72,7 +79,7 @@
     transform: translate(10% 20%);
 
     @media screen and (min-width:768px){
-    top:40px;    
+    top:40px;   
     }
     @media screen and (min-width:1200px){
     top:50px;
@@ -88,6 +95,7 @@
     @media screen and (min-width:768px) {
         flex-direction: row;
         justify-content:space-between;
+        align-items: center;
         
     }
     @media screen and (min-width:768px){
@@ -101,6 +109,7 @@
     justify-content: center;
     align-items: center;
     @media screen and (min-width:768px) {
+        padding-top: 20px;
         width:334px;    }
         @media screen and (min-width:1200px){
             width:465px;    
@@ -140,17 +149,41 @@
     color:var(--primary-text-color) ;
      display: flex;
     flex-direction:row;
+    align-items:center;
+    justify-content: center;
     width: 164px;
     height: 42px;
     padding: 12px 32px;
+    text-align: center;
     background-color:var(--accent-color);
+    cursor: pointer;
     border-radius: 10px;
     border: transparent;
-    margin: 0 auto;
+    transition:border var(--animation);
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    @media screen and (min-width:768px){
+        margin-top: 48px;
+}
     @media screen and (min-width:1200px){
         margin: 40px auto 40px 0px ;
     }
 }
+
+    .about__button:hover, 
+    .about__button:focus{
+        border: 2px solid #0A8817;
+    }
+    .about__button:focus{
+        color: var(--secondary-text-color);
+    }
+    .about__button:disabled {
+        border: 2px solid #ABABAB;
+    }
+
 .about__icon{
-    margin-left:2px ;
+   margin-left: 4px;
+   stroke:var(--primary-text-color);
+    
 }
