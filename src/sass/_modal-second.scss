@@ -1,21 +1,51 @@
-/* Временные стили для кнопок для теста модалок */
-.div--btn {
-  padding: 10px 0 30px;
-  display: flex;
-  justify-content: space-around;
+/* Стили для подложки */
+.overlay {
+   /* Скрываем подложку  */
+   opacity: 0;
+   visibility: hidden;
+   
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, .2);
+   z-index: 20;
+   transition: .3s all;
 }
-.modal-open-btn {
-   padding: 20px;
-   background-color: var(--accent-color);
-   margin: 10px;
-   color: var(--primary-text-color);
-   border-radius: 5px;
-   cursor: pointer;
 
-    &:hover,
-    &:focus {
-      border-color: red;
-    }
+/* Стили для модальных окон */
+
+.modal {
+   /* Скрываем окна  */
+   opacity: 0;
+   visibility: hidden;
+   
+   /*  Установаем ширину окна  */
+  //  width: 100%;
+   
+   /*  Центрируем и задаем z-index */
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 1000; /* Должен быть выше чем у подложки*/
+   overflow-y: scroll;
+   /*  Побочные стили   */
+  //  box-shadow: 0 3px 10px -.5px rgba(0, 0, 0, .2); 
+  //  text-align: center;
+  //  padding: 30px;
+  //  border-radius: 3px;
+  //  background-color: #fff;
+  //  transition: 0.3s all;
+}
+
+/* Стили для активных классов подложки и окна */
+
+.modal.active,
+.overlay.active{
+   opacity: 1;
+   visibility: visible;
 }
 
 /* Cтили для модалок */
@@ -27,10 +57,10 @@
   // visibility: hidden;
 
   /*  Центрируем и задаем z-index */
-  position: fixed;
-  z-index: 25; /* Должен быть выше чем у подложки*/
-  top: 0;
-  left: 0;
+  // position: fixed;
+  // z-index: 25; /* Должен быть выше чем у подложки*/
+  // top: 0;
+  // left: 0;
 
   /*  Побочные стили   */
   height: 100%;
@@ -40,21 +70,12 @@
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), 
             visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  overflow-y: scroll;
-
-  &.is-buy-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
-
+  // overflow-y: scroll;
 }
-.modal__buy-now {
-    overflow-y: scroll;
-}
+
 .buy-now {
   position: relative;
-  top: 15px;
+  // top: 15px;
   left: 50%;
   transform: translateX(-50%) translateY(3%) scale(1);
 
@@ -70,7 +91,7 @@
   width: 280px;
   text-align: center;
   background-color: #fff;
-  overflow-y: scroll;
+  // overflow-y: scroll;
 
   &__header {
     font-family: 'Seymour One';
@@ -145,6 +166,7 @@
     // height: 16px;
     // width: 16px;
     display: flex;
+    cursor: pointer;
     border-radius: 50%;
     justify-content: center;
     border-color: transparent;
@@ -153,7 +175,7 @@
     padding: 0;
     &:hover,
     &:focus {
-      transform: scale(1.1);
+      transform: scale(1.2);
       color: var(--accent-color);
     }
   }
@@ -374,10 +396,10 @@
 
 .backdrop__read-more {
     /*  Центрируем и задаем z-index */
-    position: fixed;
-    z-index: 25; /* Должен быть выше чем у подложки*/
-    top: 0;
-    left: 0;  
+    // position: fixed;
+    // z-index: 25; /* Должен быть выше чем у подложки*/
+    // top: 0;
+    // left: 0;  
     /*  Побочные стили   */
     height: 100%;
     width: 100%;
@@ -385,12 +407,7 @@
  
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
               visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        
-    &.is-readmore-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
+
 }
 
 .read-more-modal {
@@ -399,12 +416,12 @@
     top: 50%;
     left: 50%;  
     /*  Побочные стили   */
-    height: 100%;
+    // height: 100%;
     width: 100%;
-    transform: translateX(-90%) translateY(-45%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
     background-color: var(--secondary-text-color);
     border-radius: 10px;
-    margin: 0 auto;
+    // margin: 0 auto;
     padding: 28px;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 1px 3px rgba(0,0,0,.12),0 1px 1px rgba(0,0,0,.14),0 2px 1px rgba(0,0,0,.2);
@@ -416,21 +433,21 @@
     position: fixed;
 
     /*  Побочные стили   */
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    right: 5px;
     border: none;
     color: var(--primary-text-color);
     cursor: pointer;
     background-color: transparent;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    &__icon {
-        transform: scale(1);
-    }
+    // &__icon {
+    //     transform: scale(1);
+    // }
 
     &:hover,
     &:focus {
-        transform: scale(1.7);
+        transform: scale(1.2);
         fill: var(--accent-color);
     }
 }
@@ -511,34 +528,22 @@
 
 // < -- Chololate Ingredients - #3 ---------------------->
 
-
-
 .modal-ingredients {
-    /* Скрываем окна  */
-    // opacity: 0;
-    // visibility: hidden;
 
     /*  Центрируем и задаем z-index */
-    position: absolute;
-    z-index: 25;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    // position: absolute;
+    // z-index: 25;
+    // top: 80%;
+    // // left: 50%;
+    // transform: translate(-50%, -50%);
 
-    // height: 100%;
+    height: 100%;
     // width: 100%;
     padding: 15px 10px;
     border: 2px solid var(--accent-color);
     background-color: var(--secondary-text-color);
     transition: opacity 250ms linear, visibility 250ms linear;
     border-radius: 10px;
-    overflow-y: scroll;
-   
-    &.is-ingredients-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
 }
 
 
@@ -618,6 +623,7 @@
     border-color: transparent;
     // height: 16px;
     // width: 16px;
+    cursor: pointer;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -626,7 +632,7 @@
 
     &:hover,
     &:focus {
-      transform: scale(1.1);
+      transform: scale(1.2);
       color: var(--accent-color);
     }
   }
@@ -845,27 +851,22 @@
     // visibility: hidden;
 
     /*  Центрируем и задаем z-index */
-    position: fixed;
-    z-index: 25; /* Должен быть выше чем у подложки*/
-    top: 50%;
-    left: 50%;
+    // position: fixed;
+    // z-index: 25; /* Должен быть выше чем у подложки*/
+    // top: 50%;
+    // left: 50%;
 
     /*  Побочные стили   */
-    background-color: #fff;
+    background-color: var(--secondary-text-color);
     border: 2px solid var(--accent-color);
     border-radius: 10px;
-    margin: 0 auto;
+    // margin: 0 auto;
     padding: 28px;
     box-shadow: 0 1px 3px rgba(0,0,0,.12),0 1px 1px rgba(0,0,0,.14),0 2px 1px rgba(0,0,0,.2);
     // transform: translate(0%)scale(1);
     transform: translate(-50%, -50%) scale(1);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-    &.is-location-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    }
+    overflow-y: hidden;
   }
 
 @media screen and (max-width: 479px) {
@@ -924,20 +925,20 @@
 
 .modal-location-button {
     position: absolute;
-    top: 8px;
+    top: 12px;
     right: 8px;
     border: none;
     background-color: transparent;
     cursor: pointer;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    &__icon {
-        transform: scale(1);
-    }
+    // &__icon {
+    //     transform: scale(1);
+    // }
 
     &:hover,
     &:focus {
-        transform: scale(1.1);
+        transform: scale(1.2);
         fill: var(--accent-color);
     }
 }
@@ -989,3 +990,25 @@ iframe {
         line-height: 1.214;
     }
 }
+
+
+// /* Временные стили для кнопок для теста модалок */
+// .div--btn {
+//   padding: 10px 0 30px;
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-around;
+// }
+// .modal-open-btn {
+//   padding: 20px;
+//   background-color: var(--accent-color);
+//   margin: 10px;
+//   color: var(--primary-text-color);
+//   border-radius: 5px;
+//   cursor: pointer;
+
+//   &:hover,
+//   &:focus {
+//     border-color: red;
+//   }
+// }
