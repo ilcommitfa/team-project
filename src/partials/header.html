@@ -18,7 +18,7 @@
 
     <div class="buttoms">
       <button
-        class="menu-burger-btn js-open-menu"
+        class="menu-burger-btn " data-menu-open
        type="button"
          aria-expanded="false"
             aria-controls="mobile-menu" 
@@ -37,12 +37,14 @@
   </div>
 
   <!-- Мобільне меню -->
-  <div class="mob-menu js-menu-container" id="mobile-menu">
+  <div class="mob-menu" data-menu>
     <div class="container">
       <div class="mob-buttoms">
         <img src="images/logo.png" alt="logo" width="60" class="header-logo" />
         <button
-          class="mob-burger-btn js-close-menu"
+          class="mob-burger-btn"
+          data-menu-close-mob
+          
           type="button"
         >
           <svg
@@ -55,7 +57,7 @@
         </button>
       </div>
       <nav class="nav-mob">
-        <ul class="nav-mob-list">
+        <ul class="nav-mob-list  mob-menu-list">
           <li class="nav-mob-item">
             <a class="nav-mob-link" href="">Home</a>
           </li>
