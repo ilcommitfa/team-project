@@ -1,4 +1,3 @@
-
 (() => {
   const refs = {
     openMenuBtn: document.querySelector('[data-menu-open]'),
