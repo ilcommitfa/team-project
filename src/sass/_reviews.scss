@@ -15,13 +15,18 @@
   justify-content: center;
   background-image: url(../images/customer-reviews/icecreammob.png);
   position: relative;
+  padding-bottom: 400px;
+  padding-top: 600px;
 
   @media screen and (min-width: 768px) {
     background-image: url(../images/customer-reviews/icecreamtab.png);
+    padding-bottom: 300px;
   }
 
   @media screen and (min-width: 1200px) {
     background-image: url(../images/customer-reviews/icecreamdesk.png);
+    padding-bottom: 150px;
+    padding-top: 780px;
   }
 }
 .review__nav {
@@ -56,10 +61,15 @@
   top: 0;
   left: 0;
   width: 300%;
-  height: 100%;
+  // height: 100%;
   transition: left 0.4s;
   display: flex;
   flex-flow: row nowrap;
+  margin-top: 100px;
+
+  @media screen and (min-width: 1200px) {
+    margin-top: 200px;
+  }
 }
 .review__contents {
   height: 100%;
