@@ -85,8 +85,6 @@
 .socials__link {
   &:hover .socials__icon {
     fill: var(--secondary-text-color);
-    width: 32px;
-    height: 32px;
     transition: fill var(--animation);
   }
 
