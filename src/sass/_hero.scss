@@ -114,12 +114,19 @@
   color: var(--primary-text-color);
   border: 2px solid var(--accent-color);
   border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover,
   &:focus {
     border: 2px solid #0a8817;
+    color: var(--primary-text-color);
   }
 
+  &:focus {
+    color: var(--secondary-text-color);
+  }
   @media screen and (min-width: 1200px) {
     width: 134px;
     border-radius: 10px;
