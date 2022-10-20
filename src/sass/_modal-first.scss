@@ -36,7 +36,6 @@
     transition: opacity var(--animation);
 
     @media screen and (max-width: 767px) {
-        padding: 93px 15px;
         overflow-y: scroll;
     }
 }
@@ -53,11 +52,11 @@
     border-radius: 10px;
 
     position: absolute;
-    top: 50%;
+    top: 52%;
     left: 50%;
     width: 100%;
     max-width: 280px;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -52%) scale(1);
     transition: transform var(--animation);
 
     @media screen and (min-width: 768px) {
