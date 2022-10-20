@@ -150,7 +150,7 @@
       font-weight: 400;
       font-size: 12px;
       line-height: 17px;
-      color: #000000;
+      color: var(--primary-text-color);
     }
   }
 
@@ -856,7 +856,7 @@
     // z-index: 25; /* Должен быть выше чем у подложки*/
     // top: 50%;
     // left: 50%;
-
+    width: 100%;
     /*  Побочные стили   */
     background-color: var(--secondary-text-color);
     border: 2px solid var(--accent-color);
