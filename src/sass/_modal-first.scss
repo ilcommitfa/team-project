@@ -42,16 +42,15 @@
 }
 
 .franchise-modal {
-    background-color: var(--secondary-text-color);
-    width: 280px;
-    border: 2px solid var(--accent-color);
-    border-radius: 10px;
-    overflow-y: scroll;
     position: absolute;
     top: 52%;
     left: 50%;
     width: 100%;
     max-width: 280px;
+    overflow-y: scroll;
+    background-color: var(--secondary-text-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
     transform: translate(-50%, -52%) scale(1);
     transition: transform var(--animation);
 
