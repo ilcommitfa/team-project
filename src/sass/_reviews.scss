@@ -15,8 +15,12 @@
   justify-content: center;
   background-image: url(../images/customer-reviews/icecreamtab.png);
   position: relative;
-  padding-bottom: 400px;
+  padding-bottom: 360px;
   padding-top: 600px;
+
+  @media screen and (min-width: 300px) and (max-width: 479px) {
+    padding-top: 700px;
+  }
 
   @media screen and (min-width: 768px) {
     background-image: url(../images/customer-reviews/icecreamtab.png);
