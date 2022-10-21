@@ -3,24 +3,26 @@
     font-size: 16px;
     line-height: 1.5;
     text-align: center;
-    padding: 28px 30px 20px;
+    padding: 0 30px;
+    margin-bottom: 20px;
     
     @media screen and (min-width: 768px) {
         font-size: 20px;
         line-height: 1.4;
-        padding: 32px 123px 24px;
+        padding: 0px 123px;
+        margin-bottom: 24px;
     }
 }
 
 .franchise-text {
     font-size: 14px;
     line-height: 1.42;
-    padding: 0 30px 24px;
+    padding: 0 30px;
 
     @media screen and (min-width: 768px) {
         font-size: 16px;
         line-height: 1.37;
-        padding: 0 58px 32px;
+        padding: 0 58px;
     }
 }
 
@@ -48,7 +50,7 @@
     width: 100%;
     max-width: 280px;
     overflow-y: scroll;
-    
+    padding: 32px 0;
     background-color: var(--secondary-text-color);
     border: 2px solid var(--accent-color);
     border-radius: 10px;
@@ -73,7 +75,7 @@
     border-color: transparent;
     border-radius: 10px;
     cursor: pointer;
-    margin: 24px auto;
+    margin: 0 auto;
     transition: background-color var(--animation);
 
     &:hover {
@@ -88,7 +90,7 @@
         font-size: 14px;
         line-height: 1.21;
         width: 121px;
-        margin: 32px auto;
+        margin: 0 auto;
         padding: 0;
     }
 }
@@ -143,10 +145,9 @@
 }
 
 .franchise-modal-container {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding: 32px 100px;
 
     @media screen and (max-width: 767px) {
-        padding: 0 28px;
+        padding: 24px 28px;
     }
 }
