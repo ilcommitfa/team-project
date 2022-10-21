@@ -53,6 +53,7 @@
     border-radius: 10px;
     transform: translate(-50%, -52%) scale(1);
     transition: transform var(--animation);
+    overflow-y: hidden;
 
     @media screen and (min-width: 768px) {
         width: 100%;
