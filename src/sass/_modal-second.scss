@@ -1,6 +1,5 @@
 /* Стили для подложки */
 .overlay {
-   /* Скрываем подложку  */
    opacity: 0;
    visibility: hidden;
    
@@ -13,81 +12,40 @@
    z-index: 20;
    transition: .3s all;
 }
-
 /* Стили для модальных окон */
-
 .modal {
-   /* Скрываем окна  */
    opacity: 0;
    visibility: hidden;
-   
-   /*  Установаем ширину окна  */
-  //  width: 100%;
-   
-   /*  Центрируем и задаем z-index */
    position: fixed;
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
    z-index: 1000; /* Должен быть выше чем у подложки*/
    overflow-y: scroll;
-   /*  Побочные стили   */
-  //  box-shadow: 0 3px 10px -.5px rgba(0, 0, 0, .2); 
-  //  text-align: center;
-  //  padding: 30px;
-  //  border-radius: 3px;
-  //  background-color: #fff;
-  //  transition: 0.3s all;
 }
-
-textarea {
-    resize: none;
-    overflow: auto;
-}
-
-
 /* Стили для активных классов подложки и окна */
-
 .modal.active,
 .overlay.active{
    opacity: 1;
    visibility: visible;
 }
 
-/* Cтили для модалок */
 // < -- Buy now - #1 -------------------------------->
-
 .backdrop__buy-now {
-  /* Скрываем окна  */
-  // opacity: 0;
-  // visibility: hidden;
-
-  /*  Центрируем и задаем z-index */
-  // position: fixed;
-  // z-index: 25; /* Должен быть выше чем у подложки*/
-  // top: 0;
-  // left: 0;
-
-  /*  Побочные стили   */
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.2);
 
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), 
-            visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  // overflow-y: scroll;
+  transition: opacity 250ms var(--animation), 
+            visibility 250ms var(--animation);
 }
-
 .buy-now {
   position: relative;
-  // top: 15px;
   left: 50%;
   transform: translateX(-50%) translateY(7%) scale(1);
 
   @media screen and (min-width: 768px) {
       top: 50%;
-      // transform: translateX(-50%) translateY(-50%) scale(1);
     }
 
   border: 2px solid var(--accent-color);
@@ -97,8 +55,7 @@ textarea {
   width: 280px;
   text-align: center;
   background-color: #fff;
-  // overflow-y: scroll;
-
+  
   &__header {
     font-family: 'Seymour One';
     font-weight: 400;
@@ -169,15 +126,13 @@ textarea {
     top: 8px;
     right: 8px;
     background-color: transparent;
-    // height: 16px;
-    // width: 16px;
     display: flex;
     cursor: pointer;
     border-radius: 50%;
     justify-content: center;
     border-color: transparent;
     align-items: center;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--animation);
     padding: 0;
     &:hover,
     &:focus {
@@ -187,12 +142,13 @@ textarea {
   }
 
   &__close-icon {
-    // width: 16px;
-    // height: 16px;
     fill: currentColor;
   }
 }
-
+textarea {
+    resize: none;
+    overflow: auto;
+}
 @media screen and (min-width: 768px) {
   .buy-now {
     width: 568px;
@@ -232,8 +188,6 @@ textarea {
     &__close-btn {
       top: 20px;
       right: 20px;
-      // height: 20px;
-      // width: 20px;
       padding: 4px;
       border-radius: 50%;
 
@@ -274,7 +228,7 @@ textarea {
 
 .checkbox__ice-cream {
   border: 2px solid #96af8c;
-  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--animation);
   &::before {
     display: block;
     content: '';
@@ -315,7 +269,7 @@ textarea {
 
 .checkbox__ice-coffee {
   border: 2px solid var(--products-color2);
-  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--animation);
   &::before {
     display: block;
     content: '';
@@ -355,7 +309,7 @@ textarea {
 
 .checkbox__milkshake {
   border: 2px solid var(--products-color3);
-  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--animation);
   &::before {
     display: block;
     content: '';
@@ -393,27 +347,14 @@ textarea {
   }
 }
 
-
-
-
 // < -- How it's made - #2 ----------------------------->
 
-
-
 .backdrop__read-more {
-    /*  Центрируем и задаем z-index */
-    // position: fixed;
-    // z-index: 25; /* Должен быть выше чем у подложки*/
-    // top: 0;
-    // left: 0;  
-    /*  Побочные стили   */
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.2);
- 
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-              visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
+    transition: transform var(--animation),
+              visibility var(--animation);
 }
 
 .read-more-modal {
@@ -421,35 +362,24 @@ textarea {
     border: 2px solid var(--accent-color); 
     top: 50%;
     left: 50%;  
-    /*  Побочные стили   */
-    // height: 100%;
     width: 100%;
     transform: translate(-50%, -50%) scale(1);
     background-color: var(--secondary-text-color);
     border-radius: 10px;
-    // margin: 0 auto;
     padding: 28px;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--animation);
     box-shadow: 0 1px 3px rgba(0,0,0,.12),0 1px 1px rgba(0,0,0,.14),0 2px 1px rgba(0,0,0,.2);
-
 }
 
 .read-more-button {
-    /*  Центрируем и задаем z-index */
     position: fixed;
-
-    /*  Побочные стили   */
     top: 10px;
     right: 5px;
     border: none;
     color: var(--primary-text-color);
     cursor: pointer;
     background-color: transparent;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-    // &__icon {
-    //     transform: scale(1);
-    // }
+    transition: transform var(--animation);
 
     &:hover,
     &:focus {
@@ -530,43 +460,26 @@ textarea {
     }
 }
 
-
-
 // < -- Chololate Ingredients - #3 ---------------------->
 
 .modal-ingredients {
-
-    /*  Центрируем и задаем z-index */
-    // position: absolute;
-    // z-index: 25;
-    // top: 80%;
-    // // left: 50%;
-    // transform: translate(-50%, -50%);
-
     height: 100%;
-    // width: 100%;
-    // padding: 15px 10px;
     border: 2px solid var(--accent-color);
     background-color: var(--secondary-text-color);
     transition: opacity 250ms linear, visibility 250ms linear;
     border-radius: 10px;
 }
-
-
 .icecream {
   position: relative;
-
   top: 0;
   left: 50%;
   transform: translateX(-50%) translateY(0%) scale(1);
-
-  // border: 2px solid var(--accent-color);
-  // border-radius: 10px;
   width: 100%;
   padding: 28px 20px 32px;
   max-width: 280px;
   background-color: var(--secondary-text-color);
   text-align: center;
+  overflow-y: hidden;
 
   &__header {
     text-align: center;
@@ -627,14 +540,12 @@ textarea {
     padding: 0;
     background-color: transparent;
     border-color: transparent;
-    // height: 16px;
-    // width: 16px;
     cursor: pointer;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--animation);
 
     &:hover,
     &:focus {
@@ -644,8 +555,6 @@ textarea {
   }
   
   &__close-icon {
-    // width: 16px;
-    // height: 16px;
     fill: currentColor;
   }
   &__list {
@@ -848,31 +757,17 @@ textarea {
     }
 }
 
-
-
 // < -- Our location modal - #4 --------------------->
 
 .modal-location {
-    /* Скрываем окна  */
-    // opacity: 0;
-    // visibility: hidden;
-
-    /*  Центрируем и задаем z-index */
-    // position: fixed;
-    // z-index: 25; /* Должен быть выше чем у подложки*/
-    // top: 50%;
-    // left: 50%;
     width: 100%;
-    /*  Побочные стили   */
     background-color: var(--secondary-text-color);
     border: 2px solid var(--accent-color);
     border-radius: 10px;
-    // margin: 0 auto;
     padding: 28px;
     box-shadow: 0 1px 3px rgba(0,0,0,.12),0 1px 1px rgba(0,0,0,.14),0 2px 1px rgba(0,0,0,.2);
-    // transform: translate(0%)scale(1);
     transform: translate(-50%, -50%) scale(1);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--animation);
     overflow-y: hidden;
   }
 
@@ -895,12 +790,7 @@ textarea {
         min-width: 568px;
         padding: 32px 60px;
         transform: translate(-50%, -50%) scale(1);
-        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-
-        // .backdrop.is-hidden & {
-        // transform: translate(-50%, -50%) scale(1.1);
-        // }
+        transition: transform var(--animation);
     }
 
     .modal-location-button {
@@ -937,11 +827,7 @@ textarea {
     border: none;
     background-color: transparent;
     cursor: pointer;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-    // &__icon {
-    //     transform: scale(1);
-    // }
+    transition: transform var(--animation);
 
     &:hover,
     &:focus {
@@ -997,25 +883,3 @@ iframe {
         line-height: 1.214;
     }
 }
-
-
-// /* Временные стили для кнопок для теста модалок */
-// .div--btn {
-//   padding: 10px 0 30px;
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: space-around;
-// }
-// .modal-open-btn {
-//   padding: 20px;
-//   background-color: var(--accent-color);
-//   margin: 10px;
-//   color: var(--primary-text-color);
-//   border-radius: 5px;
-//   cursor: pointer;
-
-//   &:hover,
-//   &:focus {
-//     border-color: red;
-//   }
-// }
