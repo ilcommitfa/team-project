@@ -36,8 +36,8 @@
   width: 100%;
   background-color: rgba(0, 0, 0, 0.2);
 
-  transition: opacity 250ms var(--animation), 
-            visibility 250ms var(--animation);
+  transition: opacity var(--animation), 
+            visibility var(--animation);
 }
 .buy-now {
   position: relative;
